@@ -1,0 +1,379 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Home Island</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="main-header">
+      <div class="hamburger-menu">
+        <i class="fas fa-bars menu-btn"></i>
+      </div>
+      <div class="container header-container flex main-header-flex">
+        <div class="logo flex logo-flex">
+          <h3 class="prefix-header">Restaurang</h3>
+          <i class="fas fa-igloo"></i>
+          <h1 class="logo-header"><a href="index.html">Hemholmen</a></h1>
+        </div>
+        <!-- Main Nav -->
+        <nav class="main-nav">
+          <ul class="flex main-nav-flex">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="reservation.html">Reservations</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Hero -->
+    <section class="hero reservation-hero">
+      <div class="hero-container container flex">
+        <h2 class="white-header reservation-header">Boka bord</h2>
+      </div>
+    </section>
+    <!-- Booking-section -->
+    <section class="booking-section">
+      <div class="grid-icon-section">
+        <div class="grid-icon grid-icon-calendar flex" onclick="calendarClicked()">
+          <i class="far fa-calendar-alt"></i>
+        </div>
+        <div class="grid-icon grid-icon-guests flex" onclick="guestClicked()">
+          <i class="fas fa-user-friends"></i>
+        </div>
+        <div class="grid-icon grid-icon-time flex" onclick="timeClicked()">
+          <i class="far fa-clock"></i>
+        </div>
+        <div class="grid-icon grid-icon-req flex" onclick="reqClicked()">
+          <i class="fas fa-comment"></i>
+        </div>
+        <div class="grid-icon grid-icon-contact flex" onclick="contactClicked()">
+          <i class="fas fa-user"></i>
+        </div>
+      </div>
+        <div class="alert-msg-box">
+          <div class="alert-container">
+          <p>Vänligen maila in förfrågning om sällskapet blir större än 8 personer.
+          </p>
+          <p>Vi är en kontantfri restaurang, men det går utmärkt att betala med kort och Swish.
+          </p>
+          <p>Det är viktigt att komma i tid till bokningen då andra sällskap kan behöva bordet efter er!
+          </p>
+        </div>
+        </div>
+        <div class="info-box hidden">
+          <div class="date-info"></div>
+          <div class="guests-info"></div>
+          <div class="time-info"></div>
+          <div class="req-info"></div>
+        </div>
+        <!-- Calendar section -->
+        <div class="calendar-section flex">
+          <h2 class="blue-header">Välj datum</h2>
+          <header class="calendar-header flex">
+            <button
+              class="calendar-btn calendar-prev-btn"
+              onclick="decrementMonth()"
+            >
+              <i class="fas fa-caret-left"></i>
+            </button>
+            <h2 class="calendar-heading flex blue-header">Calendar Heading</h2>
+            <button
+              class="calendar-btn calendar-next-btn"
+              onclick="incrementMonth()"
+            >
+              <i class="fas fa-caret-right"></i>
+            </button>
+          </header>
+          <div class="weekdays-container flex">
+            <div class="weekdays">
+              <div>må</div>
+              <div>ti</div>
+              <div>on</div>
+              <div>to</div>
+              <div>fr</div>
+              <div>lö</div>
+              <div>sö</div>
+            </div>
+          </div>
+          <div class="calendar-container flex">
+            <div class="calendar">
+              <div class="days-passed"></div>
+              <div class="active-days"></div>
+              <div class="days-greyed"></div>
+            </div>
+          </div>
+          <footer class="calendar-footer-container">
+            <div class="calendar-footer">
+              <h2 class="footer-heading flex">Footer-heading</h2>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!-- Guest section -->
+      <div class="guest-section hidden">
+        <div class="guest-grid">
+          <header class="guest-header grid-item grid-item-1">
+            <h2>Välj antal personer</h2>
+          </header>
+          <div class="guest-amount grid-item flex">
+            <i class="fas fa-user"></i>
+            <p class="guest-value">2</p>
+          </div>
+          <div class="guest-amount grid-item flex">
+            <i class="fas fa-user"></i>
+            <p class="guest-value">3</p>
+          </div>
+          <div class="guest-amount grid-item flex">
+            <i class="fas fa-user"></i>
+            <p class="guest-value">4</p>
+          </div>
+          <div class="guest-amount grid-item flex">
+            <i class="fas fa-user"></i>
+            <p class="guest-value">5</p>
+          </div>
+          <div class="guest-amount grid-item flex">
+            <i class="fas fa-user"></i>
+            <p class="guest-value">6</p>
+          </div>
+          <div class="guest-amount grid-item flex">
+            <i class="fas fa-user"></i>
+            <p class="guest-value">7</p>
+          </div>
+          <div class="guest-amount grid-item grid-item-8 flex">
+            <i class="fas fa-user"></i>
+            <p class="guest-value">8</p>
+          </div>
+        </div>
+      </div>
+      <!-- Time section -->
+      <div class="time-section hidden">
+        <h2 class="time-header">Välj tid</h2>
+        <div class="lunch-section time-container">
+          <h2>Lunchbokning</h2>
+          <p class="cursive">Vardagar 10:30 - 15:00</p>
+          <h3>Restaurangen</h3>
+          <div class="times">
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">10:30</p>
+            </div>
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">11:00</p>
+            </div>
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">11:30</p>
+            </div>
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">12:00</p>
+            </div>
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">12:30</p>
+            </div>
+            <div class="time-element time-booked">
+              <i class="far fa-clock"></i>
+              <p class="time-value">13:00</p>
+            </div>
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">13:30</p>
+            </div>
+            <div class="time-element time-booked">
+              <i class="far fa-clock"></i>
+              <p class="time-value">14:00</p>
+            </div>
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">14:30</p>
+            </div>
+          </div>
+        </div>
+        <div class="dinner-section time-container">
+          <h2>Middagsbokning</h2>
+          <p class="cursive">Alla dagar efter 17:00</p>
+          <h3>Restaurangen</h3>
+          <div class="times">
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">17:00</p>
+            </div>
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">17:30</p>
+            </div>
+            <div class="time-element time-booked">
+              <i class="far fa-clock"></i>
+              <p class="time-value">18:00</p>
+            </div>
+            <div class="time-element time-booked">
+              <i class="far fa-clock"></i>
+              <p class="time-value">18:30</p>
+            </div>
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">19:00</p>
+            </div>
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">19:30</p>
+            </div>
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">20:00</p>
+            </div>
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">20:30</p>
+            </div>
+            <div class="time-element">
+              <i class="far fa-clock"></i>
+              <p class="time-value">21:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Req section-->
+      <div class="req-section hidden">
+        <h2>Övriga önskemål</h2>
+        <label for="req-input">önskemål</label>
+        <textarea id="req-input" name="req-input"></textarea>
+        <button class="req-btn send-btn" onclick="renderContactSection()">
+          VIDARE
+        </button>
+      </div>
+      <!-- contact section -->
+      <div class="contact-section hidden">
+        <h2>Kontaktuppgifter</h2>
+        <div class="contact-input-section">
+          <div class="name flex">
+            <div class="form-label">
+            <label>Namn<i class="required">*</i></label>
+          </div>
+          <div class="form-flex container test">
+            <input type="text" name="name" id="name" class="form" />
+            <i class="fas fa-check-circle verified-circle name-circle hidden"></i>
+          </div>
+          <p class="form-para name-para">Ange ditt namn</p>
+          </div>
+          <div class="email flex">
+            <div class="form-label">
+            <label>Emailadress<i class="required">*</i></label>
+          </div>
+          <div class="form-flex container">
+            <input type="text" name="email" id="email" class="form"/>
+            <i class="fas fa-check-circle verified-circle email-circle hidden"></i>
+          </div>
+          <p class="form-para email-para">Ange en giltig E-postadress</p>
+          </div>
+          <div class="phone flex">
+            <div class="form-label">
+            <label>Telefonnummer<i class="required">*</i></label>
+          </div>
+          <div class="form-flex container">
+            <input type="text" name="phone" id="phone" class="form" />
+            <i class="fas fa-check-circle verified-circle phone-circle hidden"></i>
+          </div>
+          <p class="form-para phone-para">Ange ett giltigt svenskt mobilnummer</p>
+          </div>
+        </div>
+        <div class="contact-checkbox-section">
+          <div class="confirmation-email">
+            <input type="checkbox" id="email-checkbox"/><label
+              >Skicka bekräftelse visa email</label
+            >
+          </div>
+          <div class="confirmation-sms">
+            <input type="checkbox" id="phone-checkbox"/><label>Skicka bekräftelse via SMS</label>
+          </div>
+          <div class="offers">
+            <input type="checkbox" /><label>Ja, jag vill få erbjudanden</label>
+          </div>
+        </div>
+        <button class="contact-btn grey-btn">Skicka bokning</button>
+      </div>
+      </div>
+    </section>
+    <div class="booking-confirmation-section hidden">
+      <div class="booking-confirmation-container">
+        <header>
+          <h2 class="booking-confirmation-header">Din bokning är bekräftad!<i class="fas fa-check-circle"></i></h2>
+        </header>
+        <div class="booking-confirmation-body">
+          <div class="flex confirmation-flex">
+          <h4 class="date-confirmed"></h4>
+        </div>
+        <div class="flex confirmation-flex">
+          <h4 class="guests-confirmed"></h4>
+        </div>
+          <div class="flex confirmation-flex">
+          <h4 class="time-confirmed"></h4>
+        </div>
+        <div class="flex confirmation-flex">
+          <h4 class="req-confirmed"></h4>
+        </div>
+        <div class="flex confirmation-flex">
+          <h4 class="client-info-confirmed"></h4>
+        </div>
+          </div>
+      </div>
+      </div>
+    <!-- Footer -->
+    <footer class="footer footer-section">
+      <div class="footer-container flex footer-flex">
+        <ul class="flex container">
+          <li><h3>Aktiviteter</h3></li>
+          <li>Skidåkning</li>
+          <li>Skridskoåkning</li>
+          <li>Bergsklättring</li>
+          <li>Vinterbad</li>
+        </ul>
+        <ul class="flex container">
+          <li><h3>Restaurangen</h3></li>
+          <li>Lunch</li>
+          <li>Middag</li>
+          <li>Take away</li>
+          <li>chambre separe</li>
+        </ul>
+        <ul class="flex container">
+          <li><h3>Om oss</h3></li>
+          <li>Vår Historia</li>
+          <li>Jobba på Hemholmen</li>
+          <li>Kontakta oss</li>
+          <li>Hitta hit</li>
+        </ul>
+        <ul class="flex container">
+          <li><h3>Privacy</h3></li>
+          <li>Cookie policy</li>
+          <li>Cookie Settings</li>
+          <li>Privacy policy</li>
+          <li>Sammarbetspartners</li>
+        </ul>
+      </div>
+      <div class="social-section">
+        <h2 class="white-header">Follow us</h2>
+        <ul>
+          <li><i class="fab fa-instagram"></i></li>
+          <li><i class="fab fa-facebook"></i></li>
+          <li><i class="fab fa-twitter"></i></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="calendar-script.js"></script>
+    <script src="menu-btn-script.js"></script>
+  </body>
+</html>
